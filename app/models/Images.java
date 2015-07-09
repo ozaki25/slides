@@ -1,0 +1,34 @@
+package models;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import com.avaje.ebean.annotation.CreatedTimestamp;
+
+import play.db.ebean.Model;
+import play.db.ebean.Model.Finder;
+
+@Entity
+public class Images extends Model {
+    @Id
+    public Long id;
+    public String name;
+    public String path;
+    @CreatedTimestamp
+    public Date createdDate;
+
+    public static Finder<Long, Images> find = new Finder(Long.class, Images.class);
+
+    public Images(String name, String path) {
+	this.name = name;
+	this.path = path;
+    }
+
+    public static void set() {
+	for(int i = 1; i < 6; i++) {
+	    Images image = new Images(i + ".jpg", "images/" + i + ".jpg");
+	    image.save();
+	}
+    }
+}

@@ -1,0 +1,19 @@
+.slide-image {
+    width: 100%;
+}
+
+.slide-change-icons {
+    text-align: center;
+    font-size: 200%;
+}
+
+.prev-slide,
+.next-slide {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.prev-slide:hover,
+.next-slide:hover {
+    cursor: pointer;
+}

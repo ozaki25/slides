@@ -1,0 +1,11 @@
+@(images: List[Images])
+
+@main("slide sample") {
+@for(image <- images) {
+  <img src="@routes.Assets.at(image.path)" alt="@image.name" class="slide-image">
+}
+<div class="icons">  
+  <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
+  <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+</div>
+}
