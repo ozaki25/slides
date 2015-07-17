@@ -1,11 +1,14 @@
 @(slide: Slides)
 
-@main("slide sample") {
+@main("slide viewer") {
 @for(image <- slide.images) {
-  <img src="@routes.Assets.at(image.path)" alt="@image.name" class="slide-image">
+  <img src="@routes.Assets.at(image.path)" alt="@image.name" class="slide-image" data-page="@image.page">
 }
-<div class="slide-change-icons">  
+<div class="toolbar">  
   <span class="prev-slide glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  <span class="current-page"></span>
+  /
+  <span class="total-page">@slide.images.size()</span>
   <span class="next-slide glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 </div>
 }
