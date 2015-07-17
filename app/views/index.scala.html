@@ -1,7 +1,7 @@
-@(images: List[Images])
+@(slide: Slides)
 
 @main("slide sample") {
-@for(image <- images) {
+@for(image <- slide.images) {
   <img src="@routes.Assets.at(image.path)" alt="@image.name" class="slide-image">
 }
 <div class="slide-change-icons">  

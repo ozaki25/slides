@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import com.avaje.ebean.annotation.CreatedTimestamp;
 
 import play.db.ebean.Model;
@@ -15,20 +16,17 @@ public class Images extends Model {
     public Long id;
     public String name;
     public String path;
+    public int page;
+    @ManyToOne
+    public Slides slide;
     @CreatedTimestamp
     public Date createdDate;
 
     public static Finder<Long, Images> find = new Finder(Long.class, Images.class);
 
-    public Images(String name, String path) {
+    public Images(String name, String path, int page) {
 	this.name = name;
 	this.path = path;
-    }
-
-    public static void set() {
-	for(int i = 1; i < 6; i++) {
-	    Images image = new Images(i + ".jpg", "images/" + i + ".jpg");
-	    image.save();
-	}
+	this.page = page;
     }
 }
