@@ -25,8 +25,8 @@ public class Images extends Model {
     public static Finder<Long, Images> find = new Finder(Long.class, Images.class);
 
     public Images(String name, String path, int page) {
-	this.name = name;
-	this.path = path;
-	this.page = page;
+        this.name = name;
+        this.path = path;
+        this.page = page;
     }
 }

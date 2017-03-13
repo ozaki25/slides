@@ -24,10 +24,10 @@ public class Slides extends Model {
     public static Finder<Long, Slides> find = new Finder(Long.class, Slides.class);
 
     public void setImages() {
-	for(int i = 1; i < 6; i++) {
-	    Images image = new Images(i + ".jpg", "images/" + i + ".jpg", i);
-	    image.save();
-	    this.images.add(image);
-	}
+        for(int i = 1; i < 6; i++) {
+            Images image = new Images(i + ".jpg", "images/" + i + ".jpg", i);
+            image.save();
+            this.images.add(image);
+        }
     }
 }

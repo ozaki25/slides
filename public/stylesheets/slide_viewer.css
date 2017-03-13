@@ -1,4 +1,4 @@
-.slide-image {
+.slide-images {
     text-align: center;
 }
 
@@ -6,18 +6,33 @@
     width: 100%;
 }
 
-.toolbar {
+.slide-pager {
     text-align: center;
 }
 
-.prev-slide,
-.next-slide {
-    font-size: 150%;
-    margin-left: 15px;
-    margin-right: 15px;
+.toolbar {
+    color: white;
+    background-color: black;
 }
 
-.prev-slide:hover,
-.next-slide:hover {
-    cursor: pointer;
+.prev,
+.next {
+    color: white;
+    font-size: 150%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.prev:hover,
+.prev:focus,
+.next:hover,
+.next:focus {
+    color: white;
+}
+
+.prev:disabled,
+.next:disabled {
+    color: gray;
+    text-decoration: none;
+    cursor: not-allowed;
 }

@@ -4,11 +4,13 @@
 @for(image <- slide.images) {
   <img src="@routes.Assets.at(image.path)" alt="@image.name" class="slide-image" data-page="@image.page">
 }
-<div class="toolbar">  
-  <span class="prev-slide glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-  <span class="current-page"></span>
-  /
-  <span class="total-page"></span>
-  <span class="next-slide glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<div class="toolbar">
+  <div class="slide-pager">
+    <span class="prev glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="current-page"></span>
+    /
+    <span class="total-page"></span>
+    <span class="next glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  </div>
 </div>
 }

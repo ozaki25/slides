@@ -3,14 +3,18 @@ Display =
     all.hide()
     first.show()
     first.addClass 'active'
-    $('.current-page').text first.data 'page'
+    $('.current-page').text 1
     $('.total-page').text all.length
-  change: (current, future)->
+    $('.prev').addClass 'disabled'
+  change: (current, future, all)->
     current.hide()
     current.removeClass 'active'
     future.show()
     future.addClass 'active'
     $('.current-page').text future.data 'page'
+    $('.prev, .next').removeClass 'disabled'
+    $('.prev').addClass 'disabled' if future.data('page') is 1
+    $('.next').addClass 'disabled' if future.data('page') is all.length
 
 $ ->
   img = 'img.slide-image'
@@ -18,13 +22,13 @@ $ ->
   first = $("#{img}:first")
   Display.initialize(all, first)
 
-  $('.prev-slide').click ->
+  $('.prev').click ->
     current = $("#{img}.active")
-    prev = current.prev(img)    
+    prev = current.prev(img)
     return unless prev.length
     Display.change(current, prev)
 
-  $('.next-slide').click ->
+  $('.next').click ->
     current = $("#{img}.active")
     next = current.next(img)
     return unless next.length
